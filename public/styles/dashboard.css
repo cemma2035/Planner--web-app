@@ -1,0 +1,152 @@
+.dashboard-full {
+  overflow: none;
+}
+#sidebar {
+  min-height: 80vh;
+  border-right: 1px solid #343a40
+}
+.sidenav-links {
+  font-size: 16px;
+}
+.btn-close {
+  display: none;
+}
+#sidebar,
+.sidenav-links {
+  background-color: #f8f9fa;
+}
+.sidenav-links.active {
+  background-color: lightgray;
+}
+.sidenav-links:hover {
+  background-color: #282828;
+  color: white;
+}
+.dashboard-content {
+  max-height: 83vh;
+  max-width: 100%;
+  overflow: scroll;
+}
+.company {
+  background-color: #282828;
+  color: white;
+  height: 6vh;
+}
+.project {
+  height: 50vh;
+}
+.filter-con {
+  height: 5vh;
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  /* .sidenav-links span {
+    margin-left: 0px !important;
+  }
+  #sidebar {
+    display: block;
+    position: absolute;
+    z-index: 50;
+  }
+  .dashboard-content {
+    position: absolute;
+  }
+  .project {
+    margin: 0;
+  }
+  .dashboard-content {
+    
+  } */
+}
+@media (min-width: 769px) {
+  #open-slide {
+    display: block;
+  }
+  #sidebar {
+    display: block;
+  }
+  /* .dashboard-content {
+    overflow: scroll;
+    max-height: 88vh;
+  } */
+  .project {
+    margin-left: 5vw !important;
+    border-radius: 5px;
+  }
+}
+@media (min-width: 992px) {
+  .project {
+    margin-left: 5vw !important;
+  }
+  #open-slide {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .btn-close {
+    display: block;
+  }
+  .profile-body{
+    margin-top: 15vh;
+  }
+  .info-right{
+    margin-bottom: 5vh;
+  }
+}
+/* Profile Screen */
+.profile-info {
+}
+.profile-head {
+  height: 35vh;
+}
+.profile-image {
+  /* width: 24vw;
+  height: 12vw; */
+}
+.profile-body {
+  min-height: 80vh;
+}
+.info-left {
+  min-height: 80vh;
+}
+
+.info-fields input:read-only {
+  background-color: white;
+}
+.basic-info {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  min-height: 42vh;
+}
+.additional-info {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.basic-info button {
+  font-size: 12px;
+  height: 35px;
+}
+#profile {
+  overflow-x: hidden;
+}
+/* My Projects */
+.project-name{
+  height: 23%;
+  border-bottom: 1px solid black;
+  align-content: baseline;
+}
+.project-name h3{
+  margin:auto;
+}
+.project-name h3:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.project-activity{
+  height:60%;
+}
+.project-activity ul{
+  background-color: inherit;
+  font-size: 12px;
+}
