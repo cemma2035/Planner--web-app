@@ -1,0 +1,33 @@
+.authentication-body {
+    overflow: hidden;
+}
+
+.signup-container {
+    margin: auto;
+    min-height: 85vh;
+    margin-top: 3vh;
+}
+
+.signin-container {
+    margin: auto;
+    min-height: 85vh;
+    margin-top: 15vh;
+}
+.email-sent-modal{
+    min-height: 50vh;
+}
+.email-sent-con img{
+    width:8vw;
+    margin-top: 5vh;
+} 
+
+.conInput {
+    position: relative;
+    display: flex;
+}
+
+#myToast {
+    position: absolute;
+    top: 10px;
+    z-index: 99;
+}
