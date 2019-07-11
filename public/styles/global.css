@@ -53,6 +53,7 @@ body{
     background-color: #343a40;
     border: 1px solid #343a40;
     box-shadow: none;
+    cursor: pointer;
 }
 
 .btn-brand:hover{
