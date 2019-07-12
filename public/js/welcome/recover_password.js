@@ -12,7 +12,6 @@ if (formFPwd) {
         axios.post(forgotPwdUrl, formData)
             .then((response) => {
                 console.log(response.data);
-                setTimeout(assignLocation("./confirmation-code.html"), 2000);
             })
             .catch((err) => {
                 console.log(err.response);

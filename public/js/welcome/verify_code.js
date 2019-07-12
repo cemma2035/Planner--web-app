@@ -1,6 +1,11 @@
 const formConfirmCode = _(".form-confirm-code");
+const urlParams = new URLSearchParams(window.location.search);
+const verificationCode = urlParams.get('verify_code');
+console.log(verificationCode);
 
 if (formConfirmCode) {
+    _("input[name='verify_code']").value = verificationCode;
+
     formConfirmCode.addEventListener("submit", (e) => {
         e.preventDefault();
     

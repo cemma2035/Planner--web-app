@@ -1,6 +1,7 @@
 const api_link = "https://goalsetterapi.herokuapp.com";
 const regForm = _(".signup-form");
 const loginForm = _(".signin-form");
+// do u see me
 
 function assignLocation(str) {
     location.assign(str);
