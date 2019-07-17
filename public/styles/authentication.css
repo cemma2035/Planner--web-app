@@ -27,8 +27,6 @@
 }
 
 #myToast {
-    position: absolute;
-    top: 10px;
     z-index: 99;
 }
 #resetModal .modal-content{
@@ -42,4 +40,7 @@
     background-position: center;
     background-size: cover;
     height: 30vh;
+}
+.stroke-white:hover svg {
+    stroke: #343a40;
 }
