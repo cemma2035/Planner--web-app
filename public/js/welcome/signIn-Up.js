@@ -5,7 +5,31 @@ const email = localStorage.getItem("email") || "";
 
 // For signUp
 if (regForm) {
+    axios.interceptors.request.use((config) => {
+        // Do something before request is sent
+        regForm.querySelector("button[type='submit']").innerHTML = loader;
+        return config;
+    }, (error) => {
+        // Do something with request error
+        handleError(error.response);
+        return Promise.reject(error);
+    });
+    
+    // Add a response interceptor
+    axios.interceptors.response.use((response) => {
+        // Do something with response data
+        regForm.querySelector("button[type='submit']").innerHTML = `${"<i class='fa fa-arrow-right'></i>"}`;
+        $('#signUpModal').modal('show');
+        return response;
+    }, (error) => {
+        // Do something with response error
+        regForm.querySelector("button[type='submit']").innerHTML = `${"<i class='fa fa-arrow-right'></i>"}`;
+        handleError(error.response);
+        return Promise.reject(error);
+    });
+
     userEmail.setAttribute("value", email);
+
     regForm.addEventListener("submit", e => {
         e.preventDefault();
         
@@ -20,26 +44,34 @@ if (regForm) {
         .then((response) => {
             console.log(response.data);
         })
-        // login immediately after sign up
-        // .then(() => {
-        //     let loginData = new FormData();
-        //     loginData.set("email", formData.get("email"));
-        //     loginData.set("email", formData.get("password"));
-
-        //     axios.post(loginUrl, loginData)
-        //     .then((response, err) => {
-        //         console.log(response.data);
-        //         console.log(err.response);
-        //     })
-        // })
         .catch((err) => {
-            handleError(err.response);
+            console.log(err.response);
         })
     })
 }
 
 // For signIn
 if (loginForm) {
+    axios.interceptors.request.use((config) => {
+        // Do something before request is sent
+        loginForm.querySelector("button[type='submit']").innerHTML = loader;
+        return config;
+    }, (error) => {
+        // Do something with request error
+        handleError(error.response);
+    });
+    
+    // Add a response interceptor
+    axios.interceptors.response.use((response) => {
+        // Do something with response data
+        loginForm.querySelector("button[type='submit']").innerHTML = `${"Log In"}`;
+        return response;
+     }, (error) => {
+        // Do something with response error
+        loginForm.querySelector("button[type='submit']").innerHTML = `${"Log In"}`;
+        handleError(error.response);
+     });
+
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
         
