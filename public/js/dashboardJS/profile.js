@@ -3,7 +3,7 @@ const profile = document.querySelector('div#profile');
 profile.innerHTML = `
 <div class="col-12 profile-head px-0 mx-0 row">
 <div class="profile-image wow bounceInDown mx-auto mt-3 col-5  col-md-4 col-lg-3 col-xl-2 px-0">
-    <img class="" src="images/thanos.jpg" alt="Profile-image" style="width: 100%; height:100%; border-radius: 50%;">
+    <img class="" src="../images/thanos.jpg" alt="Profile-image" style="width: 100%; height:100%; border-radius: 50%;">
 </div><br>
 <h3 style="animation-delay: 0.5s" class="text-center profile-name wow fadeIn col-12">Thanos</h3>
 <h6 style="animation-delay: 0.7s" class="other-info text-center wow fadeIn col-12">Project Manager</h6>
@@ -104,4 +104,6 @@ profile.innerHTML = `
     </form>
 </div>
 </div>
+
+
 `

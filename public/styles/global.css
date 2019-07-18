@@ -39,7 +39,11 @@ body{
 .bg-brand{
     background-color: #343a40;
 }
-
+.underline-border{
+    border: none;
+    border-bottom: 1px solid #343434;
+    border-radius: 0px;
+}
 .logo-btn{
     color: #343a40;
     background-color: white;
@@ -156,4 +160,10 @@ input:not(:focus):valid ~ .floating-label,
     height: auto;
     border-radius: 50%;
     background-color: white;
+}
+.nav-pills .nav-link.active{
+    background-color: #343a40;
+}
+.nav-pills .nav-link{
+    color: #343a40;
 }
