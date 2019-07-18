@@ -1,7 +1,37 @@
 .project-nav{
-    height: 80vh;
+    height: 83vh;
 }
-.team-leader span{
+.team-leader{
+    height: 10vh;
+}
+.team-leader span, .team-members span{
     font-size: 14px;
     color: gray;
+}
+.team-members{
+    height: 20vh;
+}
+.team-con{
+    border-radius: 20px;
+}
+.project-body{
+    border-radius: 20px;
+    height: 80vh;
+}
+.nav-3{
+    min-height: 40vh;
+    border-radius: 20px;
+}
+.tab-content{
+    height: 60vh;
+}
+.project-nav-tab .tab-pane{
+    
+}
+.project-nav-tab .tab-pane li{
+    font-size: 12px;
+
+}
+.project-chart{
+    height: 50vh;
 }
