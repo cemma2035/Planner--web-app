@@ -12,6 +12,7 @@ if (regForm) {
     }, (error) => {
         // Do something with request error
         handleError(error.response);
+        return Promise.reject(error);
     });
     
     // Add a response interceptor
@@ -24,6 +25,7 @@ if (regForm) {
         // Do something with response error
         regForm.querySelector("button[type='submit']").innerHTML = `${"<i class='fa fa-arrow-right'></i>"}`;
         handleError(error.response);
+        return Promise.reject(error);
     });
 
     userEmail.setAttribute("value", email);
@@ -44,7 +46,6 @@ if (regForm) {
         })
         .catch((err) => {
             console.log(err.response);
-            handleError(err.response);
         })
     })
 }

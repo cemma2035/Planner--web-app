@@ -1,4 +1,12 @@
 const formFPwd = _(".form-forgotPwd");
+const proceed = _("#proceedToMail");
+const mailMap = {
+    "gmail": "https://mail.google.com/mail/u/0/#inbox",
+    "ymail": "https://login.yahoo.com",
+    "yahoomail": "https://login.yahoo.com",
+    "outlook": "https://login.live.com",
+    "aol": "https://login.aol.com}"
+};
 
 axios.interceptors.request.use((config) => {
     // Do something before request is sent
@@ -7,6 +15,7 @@ axios.interceptors.request.use((config) => {
 }, (error) => {
     // Do something with request error
     handleError(error.response);
+    return Promise.reject(error);
 });
 
 // Add a response interceptor
@@ -18,6 +27,7 @@ axios.interceptors.response.use((response) => {
  }, (error) => {
     // Do something with response error
     handleError(error.response);
+    return Promise.reject(error);
  });
 
 
@@ -29,16 +39,17 @@ if (formFPwd) {
         forgotPwdUrl = `${api_link}${forgotPwdUrl}`;
         const formData = new FormData(formFPwd);
         const email = formData.get("email");
-        // TODO: use regex to parse user email and check for email service provider
-
+        const mail = Object.keys(mailMap).find(key => email.includes(key));
+        proceed.href = mailMap[mail];
+        
         axios.post(forgotPwdUrl, formData)
-            .then((response) => {
-                console.log(response.data);
-                _("#userMail").innerHTML = `Please check your mail for the verification link sent to <a href='#'>${email}</a>`;
-            })
-            .catch((err) => {
-                console.log(err.response);
-            })
-    })
+        .then((response) => {
+            console.log(response.data);
+            _("#userMail").innerHTML = `Please check your mail for the verification link sent to <a href='#'>${email}</a>`;
+        })
+        .catch((err) => {
+            console.log(err.response);
+        })
+    })            
 }
 

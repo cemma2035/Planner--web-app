@@ -51,24 +51,26 @@ function showPwd(x, y) {
 
 // 
 function handleError(error) {
-    if (error === undefined) {
-        assignLocation("./error.html");
-    }
-    if (error.status === 400) {
+    if (error.status == undefined) {
+        console.log(typeof error.status);
         // what to do
         $("#myToast").toast('show');
     }
-    if (error.status === 401) {
+    if (error.status == 400) {
+        // what to do
+        $("#myToast").toast('show');
+    }
+    else if (error.status == 401) {
         genericErrorFunction("password");
     }
-    if (error.status === 404 || error.status === 422) {
+    else if (error.status == 404 || error.status == 422) {
         genericErrorFunction("email");
     }
-    if (error.status === 501) {
+    else if (error.status == 501) {
         // what to do
         $("#myToast").toast('show');
     } 
-    if (error.status === 503) {
+    else if (error.status == 503) {
         // what to do
         $("#myToast").toast('show');
     }
