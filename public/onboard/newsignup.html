@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/authentication.css">
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet" />
+    <title>plannerr</title>
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/base.js" defer></script>
+    <script src="../js/welcome/signIn-Up.js" defer></script> -->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button onclick="location.href=window.location.origin" class="btn btn-default logo-btn">plannerr</button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-inline ml-auto my-2 my-lg-0">
+                <button onclick="location.href='./signin.html'" class="btn btn-brand my-2 my-sm-0" type="button">Sign
+                    In</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="tab-content signup-container col-12 col-sm-10 col-md-8 col-lg-5" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <h3 class="text-center col-12 mt-2">Get your team working together with just a few clicks</h3>
+
+                    <form class="mt-5 col-12 signup-form">
+                        <div class="form-group conInput">
+                            <label for="firstname"></label>
+                            <input placeholder=" " type="text" minlength="4" class="form-control brand-input"
+                                name="name" id="firstname">
+                            <span class="floating-label">Username</span>
+                        </div>
+                        <div class="form-group change conInput">
+                            <label for="newUserEmail"></label>
+                            <input placeholder=" " type="email" class="form-control brand-input" name="email"
+                                id="newUserEmail">
+                            <span data-id="email" data-label="Email Address" class="floating-label">Email Address</span>
+                        </div>
+                        <div class="form-group conInput">
+                            <div class="con-input change col-12">
+                                <label for="newUserPwd"></label>
+                                <input placeholder=" " type="password" minlength="6" class="form-control brand-input"
+                                    name="password" id="newUserPwd">
+                                <span id="password" onclick="showPwd('#password', '#newUserPwd')">&#xf070;</span>
+                            </div>
+
+                            <span data-id="password" data-label="Password" class="floating-label">Password</span>
+                        </div>
+                        <div class="form-group conInput">
+                            <label for="newUserPhone"></label>
+                            <input placeholder=" " type="tel" class="form-control brand-input" name="phone_number"
+                                id="newUserPhone">
+                            <span class="floating-label">Phone Number</span>
+                        </div>
+                        <span data-id="bad-request"></span>
+                        <a class="nav-button" id="company-tab-btn" data-toggle="pill" href="#company-tab" role="tab"
+                            aria-controls="company-tab" aria-selected="false">
+                            <button type="" class="btn col-12 btn-brand" data-toggle="">
+                                <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </a>
+
+
+                    </form>
+                    <nav class="mt-4 col-12" aria-label="breadcrumb">
+                        <ol class="breadcrumb mx-auto col-6">
+                            <li class="breadcrumb-item active">You</li>
+                            <li class="breadcrumb-item">Company</li>
+                            <li class="breadcrumb-item">Team</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="tab-pane fade" id="company-tab" role="tabpanel" aria-labelledby="company-tab-btn">
+                    <h3 class="text-center col-12 mt-5 mb-3">You can work as part of a company</h3>
+                    <div class="company-nav col-8 mx-auto">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="join-company-btn" data-toggle="pill"
+                                    href="#join-company-tab" role="tab" aria-controls="join-company-tab"
+                                    aria-selected="true">Join Company</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="create-company-btn" data-toggle="pill"
+                                    href="#create-company-tab" role="tab" aria-controls="create-company-tab"
+                                    aria-selected="false">Create Company</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="join-company-tab" role="tabpanel"
+                            aria-labelledby="join-company-btn">
+                            <form class="mt-5 col-12 company-form">
+                                <div class="form-group conInput">
+                                    <label for="company-name"></label>
+                                    <input placeholder=" " type="text" minlength="4" class="form-control brand-input"
+                                        name="name" id="company-name">
+                                    <span class="floating-label">Company Name</span>
+
+                                </div>
+                                <!-- <div class="form-group change conInput">
+                                    <label for="newUserEmail"></label>
+                                    <input placeholder=" " type="email" class="form-control brand-input" name="email"
+                                        id="newUserEmail">
+                                    <span data-id="email" data-label="Email Address" class="floating-label">Email
+                                        Address</span>
+                                </div>
+                                <div class="form-group conInput">
+                                    <div class="con-input change col-12">
+                                        <label for="newUserPwd"></label>
+                                        <input placeholder=" " type="password" minlength="6"
+                                            class="form-control brand-input" name="password" id="newUserPwd">
+                                        <span id="password"
+                                            onclick="showPwd('#password', '#newUserPwd')">&#xf070;</span>
+                                    </div>
+
+                                    <span data-id="password" data-label="Password"
+                                        class="floating-label">Password</span>
+                                </div>
+                                <div class="form-group conInput">
+                                    <label for="newUserPhone"></label>
+                                    <input placeholder=" " type="tel" class="form-control brand-input"
+                                        name="phone_number" id="newUserPhone">
+                                    <span class="floating-label">Phone Number</span>
+                                </div> -->
+                                <span data-id="bad-request"></span>
+                                <a class="nav-button" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
+                                    role="tab" aria-controls="pills-profile" aria-selected="false">
+                                    <button type="" class="btn col-12 btn-brand" data-toggle="">
+                                        <i class="fa fa-arrow-right"></i>
+                                    </button>
+                                </a>
+                            </form>
+
+                        </div>
+                        <div class="tab-pane fade" id="create-company-tab" role="tabpanel"
+                            aria-labelledby="create-company-btn">
+                            <form class="mt-5 col-12 company-form">
+                                <div class="form-group conInput">
+                                    <label for="company-name"></label>
+                                    <input placeholder=" " type="text" minlength="4" class="form-control brand-input"
+                                        name="name" id="company-name">
+                                    <span class="floating-label">Company Name</span>
+
+                                </div>
+                                <!-- <div class="form-group conInput">
+                                    <select class="custom-select brand-input">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div> -->
+                                <div class="form-group conInput">
+                                    <label for="company-role"></label>
+                                    <input placeholder=" " type="text" minlength="4" class="form-control brand-input"
+                                        name="name" id="company-role">
+                                    <span class="floating-label">Role at Company</span>
+
+                                </div>
+                                <span data-id="bad-request"></span>
+                                <a class="nav-button" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
+                                    role="tab" aria-controls="pills-profile" aria-selected="false">
+                                    <button type="" class="btn col-12 btn-brand" data-toggle="">
+                                        <i class="fa fa-arrow-right"></i>
+                                    </button>
+                                </a>
+                            </form>
+                        </div>
+                    </div>
+                    <nav class="mt-4 col-12 sticky-bottom" aria-label="breadcrumb">
+                        <ol class="breadcrumb mx-auto col-6">
+                            <li class="breadcrumb-item">You</li>
+                            <li class="breadcrumb-item active">Company</li>
+                            <li class="breadcrumb-item">Team</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    vcvyug,vjh
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h4 class="">You have successfully signed up! <br>
+                        We've sent you a confirmation link.
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</html>
