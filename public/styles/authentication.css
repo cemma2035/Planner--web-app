@@ -44,3 +44,15 @@
 .stroke-white:hover svg {
     stroke: #343a40;
 }
+.signup-container .breadcrumb{
+    background-color: white;
+}
+.signup-container .breadcrumb .active{
+    color: #343a40;
+}
+.signup-container .breadcrumb{
+    color: lightgrey;
+}
+.company-form{
+    min-height: 40vh;
+}
