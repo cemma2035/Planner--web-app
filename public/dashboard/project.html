@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/dashboard.css">
-    <link rel="stylesheet" href="styles/project.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="../styles/project.css">
     <script src="./js/welcome/base.js" defer></script>
     <script src="./js/welcome/verify_code.js" defer></script>
     <title>plannerr</title>
@@ -43,8 +43,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="add-project-nav mr-5 mt-2"><i style="color: lightgrey"
                         class="add-project-icon fa fas fa-plus fa-lg"></i></li>
-                <li class="mr-5 mt-2"><i style="color: lightgrey"
-                        class="projects-icon fa fas fa-folder fa-lg"></i></li>
+                <li class="mr-5 mt-2"><i style="color: lightgrey" class="projects-icon fa fas fa-folder fa-lg"></i></li>
                 <li class="notifs-nav mr-5 mt-2"><i style="color: lightgrey"
                         class="notifs-icon fa fas fa-bell fa-lg"></i></li>
                 <li class="nav-item dropdown mx-2">
@@ -70,18 +69,146 @@
                 <h4 class="mt-2">Primedsoft</h4>
             </div>
             <div class="col-12 row dashboard-full">
-                <div class="col-3 border-right project-nav row">
-                    <div class="col-12 mt-4 team-leader">
-                        <p class="mb-0">Team Leader</p>
-                        <span>Thanos (You)</span>
+                <div class="col-3 project-nav">
+                    <div class="border mt-4 p-3 team-con">
+                        <div class="col-12 team-leader">
+                            <p class="mb-0">Team Leader</p>
+                            <span>Thanos (You)</span>
+                        </div>
+                        <div class="col-12 team-members row scroller">
+                            <p class="mb-0 col-12">Team Members</p>
+                            <span class="col-12">Corvus Glaive</span>
+                            <span class="col-12">Proxima Midnight</span>
+                            <span class="col-12">Ebony Maw</span>
+                            <span class="col-12">Cull Obsidian</span>
+                            <span class="col-12">Supergiant</span>
+                            <span class="col-12">Cull Obsidian</span>
+                            <span class="col-12">Cull Obsidian</span>
+                        </div>
+                    </div>
+                    <div class="col-12 nav-3 border mt-2"></div>
+
+                </div>
+                <div class="project-body border col-9 mt-3">
+                    <div class="col-12 border-bottom mt-3 row">
+                        <h4>Restore Balance</h4>
+                        <button class="btn btn-brand ml-auto mb-1 edit-project-btn" data-toggle="modal"
+                            data-target="#editProjectModal"><i class="far fa fa-edit"></i></button>
+                    </div>
+                    <div class="col-12 mt-3 project-nav-tab">
+                        <ul class="nav nav-pills" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview"
+                                    role="tab" aria-controls="overview" aria-selected="true">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="activity-tab" data-toggle="tab" href="#activity" role="tab"
+                                    aria-controls="activity" aria-selected="false">Activity</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="milestones-tab" data-toggle="tab" href="#milestones" role="tab"
+                                    aria-controls="milestones" aria-selected="false">Milestones</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content col-12 px-0 border-top mt-2 scroller" id="myTabContent">
+                            <div class="tab-pane fade show active mt-2 row" id="overview" role="tabpanel"
+                                aria-labelledby="overview-tab">
+                                <div class="col-6 project-chart border-right">
+                                    <h4 class="mt-4 mb-3">Stats</h4>
+                                    <canvas id="projectChart" class="mt-5"></canvas>
+                                </div>
+                            </div>
+
+
+                            <div class="tab-pane fade mt-2 scroller" id="activity" role="tabpanel"
+                                aria-labelledby="activity-tab">
+                                <div class="col-12">
+                                    <h4 class="m-3">Wednesday, 17th July, 2019</h6>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item border-0 col-12">Cull Obsidian joined the team<small
+                                            style="float: right" class="">10:32am</small></li>
+                                    <li class="list-group-item border-0 col-12">Ebony Maw joined the team<small style="float: right"
+                                            class="">10:32am</small></li>
+                                    <li class="list-group-item border-0 col-12">Proxima Midnight joined the team<small
+                                            style="float: right" class="">10:32am</small></li>
+                                    <li class="list-group-item border-0 col-12">Corvus Glaive joined the team<small
+                                            style="float: right" class="">10:32am</small></li>
+                                    <li class="list-group-item border-0 col-12">You created a new team<small
+                                            style="float: right" class="">10:32am</small></li>
+                                </ul>
+                                <div class="col-12">
+                                    <h6 class="m-3">Tuesday, 16th July, 2019</h6>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item border-0 col-12">Cras justo odio<small
+                                            style="float: right" class="">10:32am</small></li>
+                                    <li class="list-group-item border-0 col-12">Dapibus ac facilisis in<small
+                                            style="float: right" class="">10:32am</small></li>
+                                    <li class="list-group-item border-0 col-12">Morbi leo risus<small
+                                            style="float: right" class="">10:32am</small></li>
+                                    <li class="list-group-item border-0 col-12">Porta ac consectetur ac<small
+                                            style="float: right" class="">10:32am</small></li>
+                                    <li class="list-group-item border-0 col-12">Vestibulum at eros<small
+                                            style="float: right" class="">10:32am</small></li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-pane fade show active mt-2 row" id="milestones" role="tabpanel"
+                                aria-labelledby="milestones-tab">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modals -->
+    <div class="modal fade" id="editProjectModal" tabindex="-1" role="dialog" aria-labelledby="addProjectModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addProjectModalLabel">Add Project</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="project-name">Project Name</label>
+                            <input type="text" class="form-control" id="project-name" aria-describedby=""
+                                placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-desc">Description</label>
+                            <textarea type="text" class="form-control" id="project-desc"
+                                placeholder="Enter a short description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="project-start">Start Date</label>
+                            <input type="date" class="form-control" id="project-start" aria-describedby=""
+                                placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-end">End Date</label>
+                            <input type="date" class="form-control" id="project-end" aria-describedby="" placeholder="">
+                        </div>
+                        <select class="custom-select">
+                            <option selected>Project Difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                        <button type="submit" class="btn btn-brand mt-3">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </body>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
@@ -90,9 +217,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script>
-<script src="js/wow.min.js"></script>
+<script src="../js/wow.min.js"></script>
 <script>
-new WOW().init();
+    new WOW().init();
 </script>
-
+<script src="../js/dashboardJS/projectChart.js"></script>
 </html>
