@@ -98,7 +98,7 @@ body{
     cursor: pointer;
 }
 .brand-input {
-    font-size: 20px;
+    font-size: 18px;
     border: none;
     border-bottom: 1px solid #343a40;
     outline: none;
@@ -136,7 +136,8 @@ body{
 input:focus ~ .floating-label,
 input:not(:focus):valid ~ .floating-label, 
 .conInput > div:focus-within ~ .floating-label, 
-.conInput > div.valid ~ .floating-label  {
+.conInput > div.valid ~ .floating-label,
+.floating-label.stay  {
   top: 0px;
   bottom: 10px;
   font-size: 11px;

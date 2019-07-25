@@ -48,17 +48,18 @@ function showPwd(x, y) {
         _(x).classList.add('active');
     }
 }
-
 // 
 function handleError(error) {
     if (error.status == undefined) {
         console.log(typeof error.status);
         // what to do
         $("#myToast").toast('show');
+        $("#myToast").css('height', '100%');
     }
     if (error.status == 400) {
         // what to do
         $("#myToast").toast('show');
+        $("#myToast").css('height', '100%');
     }
     else if (error.status == 401) {
         genericErrorFunction("password");
@@ -73,6 +74,7 @@ function handleError(error) {
     else if (error.status == 503) {
         // what to do
         $("#myToast").toast('show');
+        $("#myToast").css('height', '100%');
     }
     function genericErrorFunction(data) {
         const errorElem = _(`[data-id='${data}']`);
@@ -105,5 +107,39 @@ all(".con-input input").forEach((elem) => {
         
         const parent = elem.parentNode;
         elem.value? parent.classList.add("valid"):parent.classList.remove("valid");
+    })
+})
+
+// breadcrumb navigation
+_("#left-btn").addEventListener("click", e => {
+    e.preventDefault();
+    _("[data-roll='2']").style.display = "none";
+    _("[data-roll='1']").style.display = "block";
+    _("[data-roll='1']").style.opacity = "1";
+});
+
+_("#right-btn").addEventListener("click", e => {
+    e.preventDefault();
+    _("[data-roll='1']").style.display = "none";
+    _("[data-roll='2']").style.display = "block";
+    _("[data-roll='2']").style.opacity = "1";
+});
+
+// To keep label up when input has text (on validation)
+all('.brand-input').forEach(e => {
+    e.addEventListener('blur', event => {
+        try {
+            event.preventDefault();
+            const elemId = e.id;
+            const span = _(`#${elemId} ~ .floating-label`);
+            e.value == "" ? span.classList.remove("stay") : span.classList.add("stay");
+        } catch (e) {
+            if (e instanceof TypeError) {
+                // console.clear();
+                
+            } else {
+                console.log(e);
+            }
+        }
     })
 })
