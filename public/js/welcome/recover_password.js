@@ -1,12 +1,4 @@
 const formFPwd = _(".form-forgotPwd");
-const proceed = _("#proceedToMail");
-const mailMap = {
-    "gmail": "https://mail.google.com/mail/u/0/#inbox",
-    "ymail": "https://login.yahoo.com",
-    "yahoomail": "https://login.yahoo.com",
-    "outlook": "https://login.live.com",
-    "aol": "https://login.aol.com}"
-};
 
 axios.interceptors.request.use((config) => {
     // Do something before request is sent

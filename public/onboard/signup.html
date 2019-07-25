@@ -50,7 +50,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="tab-content signup-container col-12 col-sm-10 col-md-8 col-lg-5" id="pills-tabContent">
+            <div class="tab-content cen-con signup-container col-12 col-sm-10 col-md-8 col-lg-5" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                     <h3 class="text-center col-12 mt-2">Get your team working together with just a few clicks</h3>
 
@@ -58,7 +58,7 @@
                         <div class="form-group conInput">
                             <label for="firstname"></label>
                             <input placeholder=" " type="text" minlength="4" class="form-control brand-input"
-                                name="name" id="firstname" pattern="[a-zA-Z]{3,}\s[a-zA-Z]{3,}" required>
+                                name="name" id="firstname" pattern="[a-zA-Z]{3,15}\s[a-zA-Z]{3,15}" required>
                             <span class="floating-label">Firstname Lastname</span>
                         </div>
                         <div class="form-group change conInput">
@@ -70,7 +70,7 @@
                         <div class="form-group conInput">
                             <div class="con-input change col-12">
                                 <label for="newUserPwd"></label>
-                                <input placeholder=" " type="password" min="6" class="form-control brand-input"
+                                <input placeholder=" " type="password" min="8" class="form-control brand-input"
                                     name="password" id="newUserPwd" required>
                                 <span id="password" onclick="showPwd('#password', '#newUserPwd')">&#xf070;</span>
                             </div>
@@ -84,13 +84,9 @@
                             <span class="floating-label">Phone Number</span>
                         </div>
 
-                        <a class="nav-button" id="workspace-tab-btn" data-toggle="pill" href="#workspace-tab" role="tab"
-                            aria-controls="workspace-tab" aria-selected="false">
-                            <button type="" class="btn col-12 btn-brand" data-toggle="">
-                                <i class="fa fa-arrow-right"></i>
-                            </button>
-                        </a>
-
+                        <button type="submit" class="btn col-12 btn-brand stroke-white" data-toggle="">
+                            <i class="fa fa-arrow-right"></i>
+                        </button>
 
                     </form>
                     <nav class="mt-4 col-12" aria-label="breadcrumb">
@@ -124,7 +120,7 @@
                                 <div class="form-group conInput">
                                     <label for="workspace-name"></label>
                                     <input placeholder=" " type="text" minlength="4" class="form-control brand-input"
-                                        name="name" id="workspace-name">
+                                        name="name" id="join-workspace-name">
                                     <span class="floating-label">Workspace Name</span>
 
                                 </div>
@@ -133,7 +129,7 @@
                                 <!-- Don't change the IDs of the buttons -->
                                 <a class="nav-button" id="company-tab-btn1" data-toggle="pill" href="#company-tab"
                                     role="tab" aria-controls="company-tab" aria-selected="false">
-                                    <button type="" class="btn col-12 btn-brand" data-toggle="">
+                                    <button type="" class="btn col-12 btn-brand stroke-white" data-toggle="">
                                         <i class="fa fa-arrow-right"></i>
                                     </button>
                                 </a>
@@ -146,7 +142,7 @@
                                 <div class="form-group conInput">
                                     <label for="workspace-name"></label>
                                     <input placeholder=" " type="text" minlength="4" class="form-control brand-input"
-                                        name="name" id="workspace-name">
+                                        name="name" id="create-workspace-name">
                                     <span class="floating-label">Workspace Name</span>
 
                                 </div>
@@ -199,7 +195,7 @@
                                 <div class="form-group conInput">
                                     <label for="company-name"></label>
                                     <input placeholder=" " type="text" minlength="4" class="form-control brand-input"
-                                        name="name" id="company-name">
+                                        name="name" id="join-company-name">
                                     <span class="floating-label">Company Name</span>
 
                                 </div>
@@ -220,7 +216,7 @@
                                 <div class="form-group conInput">
                                     <label for="company-name"></label>
                                     <input placeholder=" " type="text" minlength="4" class="form-control brand-input"
-                                        name="name" id="company-name">
+                                        name="name" id="create-company-name">
                                     <span class="floating-label">Company Name</span>
 
                                 </div>
@@ -418,9 +414,10 @@
         ="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body text-center">
-                    <h4 class="">We've sent you a confirmation link to example@gmail.com. <br>
+                    <h4 id="userMail" class="">We've sent a confirmation link to example@gmail.com <br>
                         Please confirm your email address before you proceed
                     </h4>
+                    <a id="proceedToMail" href=""><button class="text-center btn btn-brand">Proceed</button></a>
                 </div>
             </div>
         </div>
