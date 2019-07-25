@@ -35,3 +35,34 @@
 .project-chart{
     height: 50vh;
 }
+.milestone{
+    height: 10vh;
+}
+.completed-box{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: #343a40;
+    border: 1px solid #343a40;
+}
+.completed-box:hover{
+    color: white;
+    background-color: #343a40;
+}
+.milestone-name{
+    height: 50%;
+}
+.milestone-progress{
+    background-color: white;
+    border: 1px solid #343a40;
+    border-radius: 5px;
+}
+.milestone-progress-bar{
+    height: 20px;
+    background-color: #343a40;
+}
+.assigned-user{
+    background-color: limegreen;
+    color: white;
+    border-radius: 20px;
+}
