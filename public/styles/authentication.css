@@ -1,5 +1,6 @@
-.authentication-body {
-    overflow: hidden;
+body {
+    overflow-x: hidden;
+    height: 100vh;
 }
 
 .signup-container {
@@ -10,8 +11,8 @@
 
 .signin-container {
     margin: auto;
-    min-height: 85vh;
-    margin-top: 15vh;
+    min-height: 60vh;
+    margin-top: 3vh;
 }
 .email-sent-modal{
     min-height: 50vh;
@@ -27,6 +28,7 @@
 }
 
 #myToast {
+    height: 0px;
     z-index: 99;
 }
 #resetModal .modal-content{
@@ -55,4 +57,19 @@
 }
 .company-form{
     min-height: 40vh;
+}
+.workspace-form{
+    min-height: 40vh;
+}
+.no-before::before{
+    color: white !important;
+}
+#industryChooser option{
+    font-size: 12px;
+}
+.industry-label{
+    font-size: 12px;
+}
+.breadcrumb .fas{
+    filter: opacity(0.8);
 }
