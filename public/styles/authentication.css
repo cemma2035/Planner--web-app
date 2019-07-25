@@ -69,3 +69,6 @@ body {
 .industry-label{
     font-size: 12px;
 }
+.breadcrumb .fas{
+    filter: opacity(0.8);
+}
