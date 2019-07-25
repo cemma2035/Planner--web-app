@@ -11,7 +11,16 @@ ${"<g fill='none' fill-rule='evenodd'>"}
     ${"</g>"}
 ${"</g>"}
 ${"</svg>"}`;
-// do u see me
+const mailMap = {
+    "gmail": "https://mail.google.com/mail/u/0/#inbox",
+    "ymail": "https://login.yahoo.com",
+    "yahoomail": "https://login.yahoo.com",
+    "outlook": "https://login.live.com",
+    "aol": "https://login.aol.com}"
+};
+const proceed = _("#proceedToMail");
+
+// a coder walks into a bar
 
 function assignLocation(str) {
     location.assign(str);

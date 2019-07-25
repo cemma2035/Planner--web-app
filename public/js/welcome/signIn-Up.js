@@ -33,20 +33,39 @@ if (regForm) {
     regForm.addEventListener("submit", e => {
         e.preventDefault();
         
-        let registerUrl = "/api/register";
+        let registerUrl = "/api/signup";
         registerUrl = `${api_link}${registerUrl}`;
         let formData = new FormData(regForm);
+        const email = formData.get("email");
+        const mail = Object.keys(mailMap).find(key => email.includes(key));
+        proceed.href = mailMap[mail];
         const passwordValue = formData.get("password");
-
         formData.set("password_confirmation", passwordValue);
 
         axios.post(registerUrl, formData)
-        .then((response) => {
+        .then(response => {
             console.log(response.data);
+            _("#userMail").innerHTML = `Please check your mail for the verification link sent to <a href='#'>${email}</a>`;
         })
-        .catch((err) => {
-            console.log(err.response);
+        .catch(err => {
+            console.log(err.constructor);
         })
+    })
+}
+
+// user authentication and email confirmation done
+const urlParams = new URLSearchParams(window.location.search);
+const cToken = urlParams.get('confirm_token')? urlParams.get('confirm_token') : null;
+console.log(cToken);
+
+if (cToken) {
+    axios.get(`${api_link}/confirmation/${cToken}`)
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch(error => {
+        console.log(error.response);
+        console.log(error.stack);
     })
 }
 
