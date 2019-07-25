@@ -155,6 +155,8 @@ input:not(:focus):valid ~ .floating-label,
   bottom: 10px;
   font-size: 11px;
   opacity: 1;
+  height: 10px;
+  z-index: 99;
   background-color: #fff;
 }
 
