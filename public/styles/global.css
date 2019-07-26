@@ -8,6 +8,21 @@ body{
     position: relative;
 }
 
+.preloader {
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+}
+.preloader svg {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+}
+
 body > nav {
     background-color: #fff !important;
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
