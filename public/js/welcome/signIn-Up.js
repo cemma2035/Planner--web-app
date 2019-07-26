@@ -1,4 +1,4 @@
-let loginUrl = "/api/login";
+let loginUrl = "/api/signin";
 loginUrl = `${api_link}${loginUrl}`;
 const userEmail = _("#newUserEmail");
 const email = localStorage.getItem("email") || "";
@@ -6,18 +6,24 @@ const email = localStorage.getItem("email") || "";
 // check if user authentication and email confirmation done
 const urlParams = new URLSearchParams(window.location.search);
 const cToken = urlParams.get('confirm_token')? urlParams.get('confirm_token') : null;
-console.log(cToken);
 
 if (cToken) {
+    // TODO: add preloader
+    _(".preloader").style.visibility = "visible";
+    _("#pills-home").style.display = "none";
+    _("#workspace-tab").style.display = "block";
+    _("#workspace-tab").style.opacity = "1";
+    // make everything b&w until server response
     axios.get(`${api_link}/api/confirmation/${cToken}`)
     .then(response => {
-        console.log("lol");
-        localStorage.setItem("userData", JSON.stringify(response.data));
-        console.log("its there");
-        // TODO: add preloader
-        replaceLocation(`${location.origin}${location.pathname}${location.hash}`);
+        _(".preloader").style.visibility = "hidden";
+        const {user} = response.data.data;
+        localStorage.setItem("userData", JSON.stringify(user));
+        const userData = JSON.parse(localStorage.getItem("userData"));
+        console.log(userData);
     })
     .catch(error => {
+        _(".preloader").style.visibility = "hidden";
         console.log(error.response);
     })
 }
@@ -58,8 +64,6 @@ if (regForm) {
         const email = formData.get("email");
         const mail = Object.keys(mailMap).find(key => email.includes(key));
         proceed.href = mailMap[mail];
-        const passwordValue = formData.get("password");
-        formData.set("password_confirmation", passwordValue);
 
         axios.post(registerUrl, formData)
         .then(response => {
@@ -67,7 +71,7 @@ if (regForm) {
             _("#userMail").innerHTML = `Please check your mail for the verification link sent to <a href='#'>${email}</a>`;
         })
         .catch(err => {
-            console.log(err.constructor);
+            console.log(err.response);
         })
     })
 }
@@ -106,6 +110,7 @@ if (loginForm) {
             setTimeout(replaceLocation("../dashboard/dashboard.html"), 2000);
         })
         .catch((err) => {
+            console.log(err.response);
             handleError(err.response);
         })
     })
