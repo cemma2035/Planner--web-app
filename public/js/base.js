@@ -70,6 +70,9 @@ function handleError(error) {
         genericErrorFunction("password");
     } else if (error.status == 404 || error.status == 422) {
         genericErrorFunction("email");
+    } else if (error.status == 500) {
+        $("#myToast").toast('show');
+        $("#myToast").css('height', '15vh');
     } else if (error.status == 501) {
         // what to do
         $("#myToast").toast('show');
@@ -142,8 +145,8 @@ all('.brand-input').forEach(e => {
         try {
             event.preventDefault();
             const elemId = e.id;
-            const span = _(`#${elemId} ~ .floating-label`);
-            e.value == "" ? span.classList.remove("stay") : span.classList.add("stay");
+            const floatingLabel = _(`#${elemId} ~ .floating-label`);
+            e.value == "" ? floatingLabel.classList.remove("stay") : floatingLabel.classList.add("stay");
         } catch (e) {
             if (e instanceof TypeError) {
                 // console.clear();
