@@ -1,0 +1,21 @@
+body{
+    overflow-x: hidden;
+}
+.team-leader{
+    height: 10vh;
+}
+.team-leader span, .team-members span{
+    font-size: 14px;
+    color: gray;
+}
+.team-con{
+    border-radius: 20px;    
+    height: 80vh;
+}
+.task-highlight{
+}
+.task-status div{
+    background-color: skyblue;
+    color: white;
+    border-radius: 10px;
+}
